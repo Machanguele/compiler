@@ -54,6 +54,27 @@ kakunene|ntxumo|tundo|mukulo|kulunkulu {lexeme=yytext(); return PalavraReservada
 /*Caracteres especiais*/
 "'"|"/" {lexeme=yytext(); return CaracteresEspeciais}
 
+
+
+/*Estrutura de controlo*/
+("loko" | "phazama" | "langa") {lexeme  = yytext(); return ESTRUTURA_DE_CONTROLO;}
+("leyi") {lexeme  = yytext(); return ESTRUTURA_DE_CONTROLO_CASO;}
+
+
+/*Estrutura de Repeticao*/
+("ka" | "yendla" | "nkanrini" | "maha") {lexeme  = yytext(); return ESTRUTURA_DE_REPETICAO;}
+
+
+(";") {lexeme  = yytext(); return FIM_DE_INSTRUCAO;}
+(",") {lexeme  = yytext(); return CONCATENACAO;}
+(":") {lexeme  = yytext(); return INICIAR_CASE;}
+("{") {lexeme  = yytext(); return INICIAR_BLOCO_FUNCAO;}
+("}") {lexeme  = yytext(); return TERMINAR_BLOCO_FUNCAO;}
+("(") {lexeme  = yytext(); return COMECAR_PARAMETRO;}
+(")") {lexeme  = yytext(); return TERMINAR_PARAMETRO;}
+
+
+
 {espacio} {/*Ignore*/}
 "//".* {/*Ignore*/}
 "=" {return Igual;}

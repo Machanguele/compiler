@@ -15,6 +15,30 @@ if |
 else |
 while {lexeme=yytext(); return Reservadas;}
 
+/*Operadores Logicos*/
+"vv" {return Disjuncao;}
+"^^" {return Conjuncao;}
+"^" {return Negacao;}
+
+/*Operadores Relacionais*/
+"==" {return Igualdade;}
+"<>" {return Diferente;}
+">" {return Maior;}
+">=" {return MaiorOuIgual;}
+"<" {return Menor;}
+"<=" {return MenorOuIgual;}
+
+
+/*Tipo de dado*/
+kakunene |
+ntxumo |
+mitxumo |
+mutsongo |
+tundo |
+mukulo |
+kulunkulu {lexeme=yytext(); return Tipo_de_Dado;}
+
+
 /*Marcador de Inicio*/
 Sungula {lexeme=yytext(); return MarcadorInicio;}
 
@@ -22,7 +46,9 @@ Sungula {lexeme=yytext(); return MarcadorInicio;}
 Gama {lexeme=yytext(); return MarcadorFim;}
 
 /*Palavras reservadas, NB: */
-Sungula |Gama {lexeme=yytext(); return PalavraReservada; }
+Sungula|
+Gama|
+kakunene|ntxumo|tundo|mukulo|kulunkulu {lexeme=yytext(); return PalavraReservada; }
 
 
 /*Caracteres especiais*/

@@ -13,7 +13,7 @@ import java.io.File;
  */
 public class Principal {
     public static void main(String[] args) {
-        String rota = "C:/Users/dell/Documents/NetBeansProjects/AnaisadorLexico/src/codigo/Lexer.flex";
+        String rota = "C:/Users/Machanguele/Documents/GitHub/compiler/src/codigo/Lexer.flex";
         gerarLexer(rota);
     }
     

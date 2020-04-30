@@ -14,6 +14,20 @@ int |
 if |
 else |
 while {lexeme=yytext(); return Reservadas;}
+
+/*Marcador de Inicio*/
+Sungula {lexeme=yytext(); return MarcadorInicio;}
+
+/*Marcador de Fim*/
+Gama {lexeme=yytext(); return MarcadorFim;}
+
+/*Palavras reservadas, NB: */
+Sungula |Gama {lexeme=yytext(); return PalavraReservada; }
+
+
+/*Caracteres especiais*/
+"'"|"/" {lexeme=yytext(); return CaracteresEspeciais}
+
 {espacio} {/*Ignore*/}
 "//".* {/*Ignore*/}
 "=" {return Igual;}

@@ -18,5 +18,9 @@ public enum Tokens {
     Division,
     Identificador,
     Numero,
-    ERROR
+    ERROR,
+    MarcadorInicio,
+    MarcadorFim,
+    PalavraReservada,
+    CaracteresEspeciais,
 }

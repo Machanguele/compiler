@@ -28,15 +28,8 @@ while {lexeme=yytext(); return Reservadas;}
 "<" {return Menor;}
 "<=" {return MenorOuIgual;}
 
-
 /*Tipo de dado*/
-kakunene |
-ntxumo |
-mitxumo |
-mutsongo |
-tundo |
-mukulo |
-kulunkulu {lexeme=yytext(); return Tipo_de_Dado;}
+kakunene |ntxumo |mitxumo |mutsongo |tundo |mukulo |kulunkulu {lexeme=yytext(); return Tipo_de_Dado;}
 
 
 /*Marcador de Inicio*/
